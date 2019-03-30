@@ -1,28 +1,56 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Helmet from 'react-helmet';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+import Header from './components/header/Header';
+
+import Home from './routes/home/Home';
+import Register from './routes/register/Register';
+import Login from './routes/login/Login';
+import Categories from './routes/categories/Categories';
+import Category from './routes/category/Category';
+import Product from './routes/product/Product';
+import Cart from './routes/cart/Cart';
+import Orders from './routes/orders/Orders';
+import Order from './routes/orders/Order';
+
+import Admin from './routes/admin/Admin';
+import NotFound from './routes/system-pages/NotFound';
+
+import './App.scss';
+
+type Props = {
+  location: Location;
+};
+
+function App(props: Props) {
+  return (
+    <React.Fragment>
+      <Helmet defaultTitle="Vefforritunarbúðin" titleTemplate="%s – Vefforritunarbúðin" />
+
+      <Header />
+
+      <div className="app">
+
+        <main className="main__content">
+          <Switch location={props.location}>
+            <Route path="/" exact component={Home} />
+            <Route path="/register" exact component={Register} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/categories/" exact component={Categories} />
+            <Route path="/categories/:id" exact component={Category} />
+            <Route path="/product/:id" exact component={Product} />
+            <Route path="/cart" exact component={Cart} />
+            <Route path="/orders" exact component={Orders} />
+            <Route path="/orders/:id" exact component={Order} />
+            <Route path="/admin" component={Admin} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+
       </div>
-    );
-  }
+    </React.Fragment>
+  );
 }
 
-export default App;
+export default withRouter(App);

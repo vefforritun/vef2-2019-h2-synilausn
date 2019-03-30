@@ -1,0 +1,43 @@
+@import '../../config.scss';
+
+.orders {
+  @include container;
+
+  &__row {
+    @include row;
+  }
+
+  &__col {
+    @include columns(12);
+
+    @media (min-width: 600px) {
+      @include columns(8);
+      @include offset-left(2);
+    }
+  }
+
+  &__heading {
+    margin-bottom: $gutter;
+  }
+
+  &__link {
+    margin-top: $gutter;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: $gutter;
+  }
+
+  &__term {
+    font-weight: bold;
+    width: 33%;
+  }
+
+  &__value {
+    margin-left: auto;
+    width: 66%;
+  }
+}

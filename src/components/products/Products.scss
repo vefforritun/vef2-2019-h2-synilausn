@@ -1,0 +1,41 @@
+
+@import '../../config.scss';
+
+.category {
+  max-width: $max-width;
+  margin: 0 auto;
+  margin-bottom: $gutter * 2;
+
+  @media (max-width: $max-width - 1) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+
+  &__error {
+    margin-bottom: $gutter / 2;
+  }
+
+  &__title {
+    margin-bottom: $gutter / 2;
+    font-size: 2rem;
+  }
+
+  &__row {
+    @include row;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    @include columns(12);
+
+    margin-bottom: $gutter * 2;
+
+    @media (min-width: 600px) {
+      @include columns(6);
+    }
+
+    @media (min-width: 960px) {
+      @include columns(4);
+    }
+  }
+}

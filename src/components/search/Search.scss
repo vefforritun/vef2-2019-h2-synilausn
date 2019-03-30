@@ -1,0 +1,10 @@
+@import '../../config.scss';
+
+.search {
+  display: flex;
+  margin-bottom: $gutter;
+
+  &__input {
+    margin-right: $gutter / 2;
+  }
+}

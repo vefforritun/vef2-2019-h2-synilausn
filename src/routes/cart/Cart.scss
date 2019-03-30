@@ -1,0 +1,80 @@
+@import '../../config.scss';
+
+.cart {
+  @include container;
+
+  &__row {
+    @include row;
+  }
+
+  &__col {
+    @include columns(12);
+
+    @media (min-width: 1200px) {
+      @include columns(8);
+      @include offset-left(2);
+    }
+  }
+
+  &__line {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $gutter * 2;
+  }
+
+  &__image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    overflow: hidden;
+
+    margin-right: $gutter;
+
+    @media (min-width: 600px) {
+      display: block;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__titleLine {
+    width: 100%;
+    margin-bottom: $gutter;
+
+    @media (min-width: 600px) {
+      flex: 4;
+      margin-right: $gutter;
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @media (min-width: 600px) {
+      flex: 2;
+    }
+  }
+
+  &__lineTotal {
+    font-weight: bold;
+    margin: $gutter 0;
+
+    @media (min-width: 600px) {
+      margin: 0;
+    }
+  }
+
+  &__total {
+    font-weight: bold;
+  }
+}

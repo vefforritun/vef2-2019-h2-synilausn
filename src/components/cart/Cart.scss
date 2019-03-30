@@ -1,0 +1,52 @@
+@import '../../config.scss';
+
+// TODO mætti skipta upp í nokkrar sass skrár
+
+.cart {
+  &__link {
+    font-weight: bold;
+    color: $color-background;
+  }
+}
+
+.addToCart {
+  display: flex;
+  align-items: center;
+  margin-bottom: $gutter;
+
+  &__input {
+    margin-right: $gutter / 2;
+
+    input {
+      max-width: 50px;
+    }
+  }
+
+  &__success {
+    margin-left: $gutter / 2;
+  }
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+
+  .quantity__input input {
+    max-width: 50px;
+    margin-right: $gutter / 2;
+  }
+}
+
+.submit {
+  &__title {
+    margin-bottom: $gutter / 2;
+  }
+
+  &__input {
+    margin-bottom: $gutter / 2;
+  }
+
+  &__input label {
+    flex: 0 1 150px;
+  }
+}

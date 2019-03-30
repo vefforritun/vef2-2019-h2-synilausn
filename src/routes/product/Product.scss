@@ -1,0 +1,41 @@
+@import '../../config.scss';
+
+.productDetails {
+  @include container;
+  margin-bottom: $gutter * 2;
+
+  &__row {
+    @include row;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    @include columns(12);
+    margin-bottom: $gutter;
+
+    @media (min-width: 650px) {
+      @include columns(6);
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    @include columns(12);
+
+    @media (min-width: 650px) {
+      @include columns(6);
+    }
+  }
+
+  &__title {
+    margin-bottom: $gutter;
+  }
+
+  &__price {
+    margin-bottom: $gutter / 2;
+  }
+
+  &__text p {
+    margin-bottom: $gutter / 2;
+  }
+}
